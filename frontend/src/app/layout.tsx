@@ -4,11 +4,13 @@ import "./globals.css";
 import { StarknetProvider } from "~/StarknetProvider";
 import { Toaster } from "react-hot-toast";
 
+import LinkToDevTools from "./components/ui_components/LinkToDevTools";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Starknet Scaffold",
-  description: "Created with love",
+  title: "Starknet Eventoors",
+  description: "Project initialized using Starknet Scaffold", //! To be replaced by a description of the dApp!
 };
 
 export default function RootLayout({
@@ -23,6 +25,9 @@ export default function RootLayout({
       >
         <StarknetProvider>{children}</StarknetProvider>
         <Toaster />
+
+        {/* BELOW LINK TO DEV TOOLS TO BE REMOVED FOR PRODUCTION */}
+        <LinkToDevTools />
       </body>
     </html>
   );

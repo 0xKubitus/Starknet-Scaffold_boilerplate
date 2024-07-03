@@ -6,7 +6,8 @@ import ConnectionModal from "../ConnectionModal";
 import { useContractRead } from "@starknet-react/core";
 import { Account, RpcProvider } from "starknet";
 import CopyButton from "../ui_components/CopyButton";
-import Erc20Abi from "../../abi/token.abi.json";
+import Erc20Abi from "src/abi/token.abi.json";
+
 import {
   ETH_SEPOLIA,
   STRK_SEPOLIA,

@@ -109,7 +109,7 @@ const Header = () => {
               fontFamily="Cursive, sans-serif"
               fill={`${theme === "dark" ? "white" : "black"}`}
             >
-              starknet-scaffold
+              Starknet Eventoors
             </text>
           </svg>
         </span>

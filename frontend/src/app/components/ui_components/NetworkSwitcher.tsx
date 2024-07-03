@@ -24,10 +24,12 @@ const NETWORK_MAPPING: { [key: string]: string } = {
 };
 
 const networks = [
-  {
-    value: "SN_MAIN",
-    label: "Mainnet",
-  },
+  //? COMMENTED OUT ONLY FOR DEVELOPMENT STAGE,
+  //? BUT PRODUCTION WILL BE ON MAINNET.
+  // {
+  //   value: "SN_MAIN",
+  //   label: "Mainnet",
+  // },
   {
     value: "SN_SEPOLIA",
     label: "Sepolia",

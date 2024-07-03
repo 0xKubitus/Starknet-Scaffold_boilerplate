@@ -10,6 +10,7 @@ import {
   reddioProvider,
   StarknetConfig,
   starkscan,
+  voyager,
   useInjectedConnectors,
 } from "@starknet-react/core";
 import { ArgentMobileConnector } from "starknetkit/argentMobile";
@@ -22,7 +23,8 @@ interface StarknetProviderProps {
 export function StarknetProvider({ children }: StarknetProviderProps) {
   const { connectors: injected } = useInjectedConnectors({
     recommended: [argent(), braavos()],
-    includeRecommended: "always",
+    includeRecommended: "onlyIfNoConnectors",
+    order: "random",
   });
 
   const connectors = [
@@ -31,6 +33,8 @@ export function StarknetProvider({ children }: StarknetProviderProps) {
     new ArgentMobileConnector(),
   ];
 
+  //? I'M NOT SURE IF IT IS MANDATORY TO PROVIDE
+  //? A VALUE FOR THE 2 BELOW ENVIRONMENT VARIABLES?
   const apiKey = process.env.NEXT_PUBLIC_API_KEY!;
   const nodeProvider = process.env.NEXT_PUBLIC_PROVIDER!;
 
@@ -50,9 +54,11 @@ export function StarknetProvider({ children }: StarknetProviderProps) {
   return (
     <StarknetConfig
       connectors={connectors}
-      chains={[mainnet, sepolia]}
+      // chains={[mainnet, sepolia]} //? let's only use sepolia for now
+      chains={[sepolia]}
       provider={provider}
-      explorer={starkscan}
+      // provider={publicProvider()} //? <- this is how the provider is configured by default in Starknet React (rather than all the above)
+      explorer={voyager}
       autoConnect
     >
       {children}

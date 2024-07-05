@@ -7,7 +7,20 @@ const NewEventPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Hello, ${name}!`);
+    // alert(`Hello, ${name}!`);
+
+    let eventData = {
+      event_name: name,
+    };
+
+    alert(`name = ${eventData.event_name}!`);
+    console.log("EventData =", eventData);
+
+    // // save `eventData` in: `./data/newEventData.json'
+    // // Creating or modifying files directly within a user's local file system from a web application without any backend server is restricted due to web browser security policies.
+    // // Browsers are designed to prevent web pages from accessing or altering files on a user's local file system to avoid potential security risks.
+
+    //TODO: post the JSON Object to IPFS using Pinata
   };
 
   return (

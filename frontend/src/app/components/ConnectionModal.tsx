@@ -1,3 +1,5 @@
+//COMPONENT USED FOR BURNER WALLETS
+
 "use client";
 import CopyButton from "./ui_components/CopyButton";
 import GenericModal from "./ui_components/GenericModal";

@@ -27,6 +27,10 @@ mod EventContract {
 
     #[storage]
     struct Storage {
+        event_id: u256,
+        // name: ByteArray,
+        // description: ByteArray,
+        metadata_uri: ByteArray,
         #[substorage(v0)]
         accesscontrol: AccessControlComponent::Storage,
         #[substorage(v0)]
